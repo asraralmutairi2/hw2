@@ -155,7 +155,28 @@ your Git pane is cleared up afterwards.*
     table (with the `count()` function) for their birth country
     (`born_country`) and arrange the resulting data frame in descending
     order of number of observations for each country. Which country is
-    the most common?
+    the most common? -Germany and United Kingdom
+
+``` r
+nobel_living_science %>%
+filter(born_country_us=="Other",country_us=="USA")%>%count(born_country) %>%
+arrange(desc(n))
+```
+
+    ## # A tibble: 37 x 2
+    ##    born_country       n
+    ##    <chr>          <int>
+    ##  1 United Kingdom    15
+    ##  2 Canada            12
+    ##  3 Germany           10
+    ##  4 China              6
+    ##  5 Poland             6
+    ##  6 France             5
+    ##  7 Italy              5
+    ##  8 Japan              5
+    ##  9 Austria            4
+    ## 10 Hungary            4
+    ## # … with 27 more rows
 
 Knit, *commit, and push your changes to GitHub with an appropriate
 commit message. Make sure to commit and push all changed files so that
